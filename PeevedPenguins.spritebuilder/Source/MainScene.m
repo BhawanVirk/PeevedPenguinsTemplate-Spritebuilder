@@ -10,6 +10,17 @@
 
 @implementation MainScene
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        [CCDirector sharedDirector].displayStats = YES;
+    }
+    
+    return self;
+}
+
 - (void)play
 {
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
