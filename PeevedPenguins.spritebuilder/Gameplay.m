@@ -12,6 +12,7 @@
 {
     CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
+    CCNode *_levelNode;
 }
 
 
@@ -20,6 +21,8 @@
 {
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
+    CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
+    [_levelNode addChild:level];
 }
 
 // called on every touch in this scene
@@ -28,6 +31,7 @@
     [self launchPenguin];
 }
 
+
 - (void)launchPenguin
 {
     // loads the Penguin.ccb we have set up in Spritebuilder
@@ -35,7 +39,7 @@
     // position the penguin at the bowl of the catapult
     penguin.position = ccpAdd(_catapultArm.position, ccp(16, 50));
     
-    // add the penguin to the physicsNode of this scene (because it has physics enabled
+    // add the penguin to the physicsNode of this scene (because it has physics enabled)
     [_physicsNode addChild:penguin];
     
     // manually create & apply a force to launch the penguin
