@@ -54,7 +54,7 @@
     [self runAction:follow];
     
     // make retry button stick to the top left corner
-    CCActionMoveTo *retryFollow = [CCActionMoveTo actionWithDuration:1.0 position:ccpAdd(penguin.position, ccp(0, 100))];
+    CCActionMoveTo *retryFollow = [CCActionMoveTo actionWithDuration:1.0 position:ccpAdd(penguin.position, ccp(0, -100))];
     [_retryButton runAction:retryFollow];
 }
 
