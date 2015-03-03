@@ -60,7 +60,7 @@
         CGPoint penguinPosition = [_catapultArm convertToWorldSpace:ccp(34, 138)];
         NSLog(@"WorldSpace: x=%f, y=%f", penguinPosition.x, penguinPosition.y);
         // transform the world position to the node space to which the penguin will be added (_physicsNode)
-        _currentPenguin.position = [_physicsNode convertToNodeSpace:penguinPosition];
+        _currentPenguin.position = penguinPosition;//[_physicsNode convertToNodeSpace:penguinPosition];
         NSLog(@"NodeSpace: x=%f, y=%f", _currentPenguin.position.x, _currentPenguin.position.y);
         // add it to the physics world
         [_physicsNode addChild:_currentPenguin];
