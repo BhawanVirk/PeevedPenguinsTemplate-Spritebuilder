@@ -13,8 +13,7 @@
     CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
     CCNode *_levelNode;
-    CCButton *_retryButton;
-    CCNode *_mainNode;
+    CCNode *_contentNode;
 }
 
 
@@ -52,11 +51,7 @@
     // ensure followed object is in visible area when starting
     self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
-    [self runAction:follow];
-    
-    // make retry button stick to the top left corner
-    CCActionFollow *retryFollow = [CCActionFollow actionWithTarget:_mainNode];
-    [_retryButton runAction:retryFollow];
+    [_contentNode runAction:follow];
 }
 
 - (void)retry
