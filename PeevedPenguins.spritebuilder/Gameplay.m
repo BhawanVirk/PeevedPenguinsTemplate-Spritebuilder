@@ -14,6 +14,7 @@
     CCNode *_catapultArm;
     CCNode *_levelNode;
     CCButton *_retryButton;
+    CCNode *_mainNode;
 }
 
 
@@ -54,7 +55,7 @@
     [self runAction:follow];
     
     // make retry button stick to the top left corner
-    CCActionFollow *retryFollow = [CCActionFollow actionWithTarget:penguin];
+    CCActionFollow *retryFollow = [CCActionFollow actionWithTarget:_mainNode];
     [_retryButton runAction:retryFollow];
 }
 
