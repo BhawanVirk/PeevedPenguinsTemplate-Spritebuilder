@@ -13,6 +13,7 @@
     CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
     CCNode *_levelNode;
+    CCButton *_retryButton;
 }
 
 
@@ -51,6 +52,10 @@
     self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
     [self runAction:follow];
+    
+    // make retry button stick to the top left corner
+    CCActionFollow *retryFollow = [CCActionFollow actionWithTarget:penguin];
+    [_retryButton runAction:retryFollow];
 }
 
 - (void)retry
