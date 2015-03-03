@@ -807,8 +807,8 @@
 						<key>value</key>
 						<array>
 							<real>39</real>
-							<real>293</real>
-							<integer>0</integer>
+							<real>27</real>
+							<integer>1</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -855,9 +855,9 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
+							<real>920</real>
 							<real>40</real>
-							<real>40</real>
-							<integer>0</integer>
+							<integer>3</integer>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -868,9 +868,9 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
+							<real>960</real>
 							<real>0.0</real>
-							<real>0.0</real>
-							<integer>0</integer>
+							<integer>3</integer>
 							<integer>0</integer>
 						</array>
 					</dict>
