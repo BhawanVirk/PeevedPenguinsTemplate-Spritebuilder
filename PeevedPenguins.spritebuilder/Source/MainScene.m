@@ -15,7 +15,7 @@
     self = [super init];
     
     if (self) {
-        [CCDirector sharedDirector].displayStats = YES;
+        // [CCDirector sharedDirector].displayStats = YES;
     }
     
     return self;
