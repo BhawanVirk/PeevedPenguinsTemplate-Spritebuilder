@@ -7,6 +7,7 @@
 //
 
 #import "Gameplay.h"
+#import "CCPhysics+ObjectiveChipmunk.h"
 
 @implementation Gameplay
 {
@@ -32,6 +33,9 @@
     
     // visualize physics bodies & joints
     _physicsNode.debugDraw = YES;
+    
+    // setup collision delegate
+    _physicsNode.collisionDelegate = self;
     
     // nothing shall collide with our invisible nodes
     _pullbackNode.physicsBody.collisionMask = @[];
@@ -134,6 +138,24 @@
 {
     // reload this level
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
+}
+
+- (void)sealRemoved:(CCNode *)seal
+{
+    [seal removeFromParent];
+}
+
+#pragma mark - Collision Delegate Methods
+- (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
+{
+    float energy = [pair totalKineticEnergy];
+    
+    // if energy is large enough, remove the seal
+    if (energy > 5000.f) {
+        [[_physicsNode space] addPostStepBlock:^{
+            [self sealRemoved:nodeA];
+        } key:nodeA];
+    }
 }
 
 @end
