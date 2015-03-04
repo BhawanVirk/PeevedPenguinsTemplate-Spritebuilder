@@ -36,7 +36,7 @@ static const float MIN_SPEED = 5.f;
     [_levelNode addChild:level];
     
     // visualize physics bodies & joints
-    _physicsNode.debugDraw = YES;
+    //_physicsNode.debugDraw = YES;
     
     // setup collision delegate
     _physicsNode.collisionDelegate = self;
